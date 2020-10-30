@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding: 0 100px 0 100px;">
+    <h1 style="text-align: center;">Pizza Order</h1>
+    
+    <form action="" method="post">
+
+        <label for="name">Your name:</label>
+        <input placeholder="Name" minlength="3" maxlength="10" required type="text">
+        <br>
+        <label for="email">Your email:</label>
+        <input id="email" placeholder="Email" required type="email">
+        <br>
+        <label for="">Topping:</label>
+        <input checked type="radio" name="radiobutton" id="supreme">
+        <label for="supreme">Supreme</label>
+        <input type="radio" name="radiobutton" id="vegetarian">
+        <label for="vegetarian">Vegetarian</label>
+        <input type="radio" name="radiobutton" id="hawaian">
+        <label for="hawaian">Hawaian</label>
+        <br>
+        <label for="select1">Sauce:</label>
+        <select name="select" id="select1">
+            <option value="tomato">Tomato</option>
+        </select>
+        <br>
+        <label for="">Extras:</label>
+
+        <input checked type="checkbox" id="check1">
+        <label for="check1">Cheese</label>
+
+        <input type="checkbox" id="check2">
+        <label for="check2">Onions</label>
+
+        <input type="checkbox" id="check3">
+        <label for="check3">Olives</label>
+        <br>
+        <label for="text1">Delivery instructions:</label>
+        <br>
+        <textarea required name="textarea" id="text1" cols="50" rows="10"></textarea>
+        <br>
+        <label for="number1">Select a number</label>
+        <input id="number1" name="numberOf" min="1" max="7" type="number">
+        <br>
+        <label for="date">Order date:</label>
+        <input type="date" id="date" name="orderDate">
+        <br>
+        <input type="reset">
+        <br>
+        <input type="submit" value="Send order">
+
+    </form>
+</body>
+</html>
