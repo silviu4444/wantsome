@@ -1,0 +1,11 @@
+article h1 {
+ font-weight: 900;
+}
+article > p:nth-of-type(1) {
+    background-color: black;
+    color: white;
+}
+article > p:nth-of-type(2) {
+    background-color: black;
+    color: white;
+}
