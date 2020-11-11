@@ -1,0 +1,51 @@
+.nav1 div {
+    width: 150px;
+    border: 2px solid red;
+}
+
+.nav1 li {
+    padding: 2px 0px;
+}
+
+.section1 {
+    border: 2px solid yellow;
+    position: absolute;
+    top: 10px;
+    left: 162px;
+    padding: 10px;
+}
+
+.div1 {
+    position: absolute;
+    top: 10px;
+    left: 162px;
+    border: 2px solid yellow;
+    max-width: 800px;
+}
+
+.div1 p {
+    padding: 10px;
+}
+
+.div2 {
+    border-top: 2px solid yellow;
+}
+
+.div3 {
+    border-top: 2px solid yellow;
+}
+
+footer {
+    position: absolute;
+    top: 300px;
+    border: 2px solid green;
+    min-width: 970px;
+    left: 0;
+}
+footer p {
+    text-align: center;
+}
+
+
+
+

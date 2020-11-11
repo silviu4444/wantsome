@@ -1,0 +1,25 @@
+nav {
+    width: 150px;
+    border: 2px solid red;
+    float: left;
+}
+
+.float {
+    float: left;
+    width: 700px;
+    border: 2px solid yellow;
+}
+
+.float div {
+    border-top: 2px solid yellow;
+}
+footer {
+    position: relative;
+    left: 0;
+    max-width: 870px;
+    clear: both;
+    border: 2px solid green;
+}
+footer p {
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+.example {
+    width: fit-content;
+    border: 5px dotted red;
+    padding: 15px;
+    width: 400px;
+    height: 400px;
+    background-image: url(https://media.realitatea.net/multimedia/image/201906/w728/griafa_77453000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: content-box;
+}
