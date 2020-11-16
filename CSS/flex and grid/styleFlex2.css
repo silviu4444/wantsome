@@ -1,0 +1,54 @@
+body {
+    background-color: #eeeedc;
+}
+p {
+    padding: 20px;
+    border-bottom: 2px solid black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    background-color: rgb(55, 216, 55);
+    color: white;
+    font-size: 20px;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(55, 216, 55, 0.300);
+}
+.section1 {
+    width: 250px;
+    height: 250px;
+    background: url(https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-thumb.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section2 {
+    width: 250px;
+    height: 250px;
+    background: url(https://i.pinimg.com/originals/bf/82/f6/bf82f6956a32819af48c2572243e8286.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section3 {
+    width: 250px;
+    height: 250px;
+    background: url(https://images4.alphacoders.com/936/936378.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    background-color: rgb(55, 216, 55);
+    color: white;
+    font-size: 20px;
+}
