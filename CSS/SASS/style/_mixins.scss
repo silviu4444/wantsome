@@ -1,0 +1,14 @@
+@mixin button($hover) {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: blue;
+    text-transform: uppercase;
+    color: white;
+    &:hover {
+        color: $hover;
+    }
+}
+
+.menu-button {
+    @include button(red);
+}
