@@ -248,9 +248,146 @@ console.log(arrayNumbers)
 //Ex11 : Aveti urmatorul array - folositi o functie care sa ia arrayul ca argument si sa-l returneze ordonat
 var fruitsArray = ["Apple", "Lemon", "Banana", "Orange", "Bere", "Mici"]
 
+function myFunction(array) {
+   return array.sort()
+}
+
+console.log(myFunction(fruitsArray))
 
 
-console.log(fruitsArray)
 
 
 
+
+// TEMA OBJECTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+
+
+
+
+
+
+
+
+
+
+
+// Ex1
+// Creati un obiect "car"
+// Adaugati proprietatea name si valoarea Tesla
+// Adaugat proprietatea wheels si valoarea 4
+// Schimbati valoarea name sa fie Mercedes
+// Stergeti proprietatea name
+
+var car = {
+   name: "Tesla"
+}
+console.log(car)
+car.name = "Mercedes"
+console.log(car)
+delete car.name;
+console.log(car)
+
+//Ex2
+// Creati un obiect cu 4 proprietati
+// Stocati "key"-urile intr-o variabila noua
+// intr-o alta variabila vreau sa am toate key-urile cu litere mari
+// Stocati valorile intr-o variabila noua
+// intr-o alta variabila vreau sa am toate valorile cu litere mici
+// vreau la final sa ma rezultatul un singur string care sa contina o fraza de genul "proprietatea1 proprietatea2 proprietatea3 proprietatea4 reprezinta ceva"
+var objectOne = {
+   car: "Audi",
+   model: "A6 All Road",
+   year: 2016,
+   engine: "3000 BI TDI"
+}
+
+var keyObjectOne = Object.keys(objectOne);
+console.log(keyObjectOne)
+var keyObjectOneToUpperCase = keyObjectOne.join(", ").toLocaleUpperCase()
+console.log(keyObjectOneToUpperCase)
+var keyObjectOneToLowerCase = keyObjectOneToUpperCase.toLowerCase()
+console.log(keyObjectOneToLowerCase)
+
+var allProperties = Object.values(objectOne).join(" ").concat(" reprezinta specificatiile tehnice")
+console.log(allProperties)
+
+//Ex3
+// Creati un obiect  cu 3 proprietati si una dintre ele sa reprezinte o  metoda
+// Metoda din obiect vreau sa returneze sau sa printeze (console.log()) prima valoare impreuna cu a doua valoare.
+var objectTwo = {
+   car: "VW",
+   model: "Tiguan",
+   specs: function() {
+      console.log(this.car, this.model)
+   }
+}
+objectTwo.specs()
+
+//Ex4 
+// Creati un obiect cu cateva proprietati
+var objectThree = {
+   name: "Popescu",
+   age: 22,
+   eyesColor: "black"
+}
+// "Copiati" obiectul printr-o metoda specifica obiectelor(vedeti pe google) si stocatil intr-o alta variabila
+var copyObjectThree = Object.assign(objectThree)
+console.log(copyObjectThree)
+// Pe obiectul nou adaugam 2 noi proprietati
+copyObjectThree.city = "Iasi"
+copyObjectThree.nationality = "Romanian"
+console.log(copyObjectThree)
+// Avem obiectul de mai jos, folosind o metoda pe obiecte faceti "merge" intre cele 2 obiecte si salvati-l sub un nume nou.
+myHouse = { 
+   rooms: 3,
+   zone: "Bucium",
+   animals: 1
+ }
+
+ var copyObject = Object.assign(copyObjectThree, myHouse)
+ console.log(copyObject)
+ 
+ // Ex5 
+ // Creati un obiect care sa contina un alt obiect in interorul lui cu 2 proprietati
+ var objectFour = {
+    childObjectFour: {
+       name: "Razvan",
+       age: 26
+    }
+ }
+ // Accesati proprietatile acelui obiect si stocati key-le intr-o variabila separata.
+ console.log(objectFour.childObjectFour.name)
+ var objectFourKeys = Object.keys(objectFour.childObjectFour)
+ console.log(objectFourKeys)
+ // transformati arrayul intr-un singur string care sa rezulte "proprietatea1 si proprietatea2 apartin obiectului x"
+ console.log(objectFourKeys.join(" ").concat(" ","apartin obiectului childObjectFour"))
+ 
+ //Ex6
+ // Avem obiectul : 
+ myObject = {
+ name: "John",
+ surname: "Applegate",
+ }
+ //Adaugati o metoda care sa sorteze cele 2 valori ale numelui.
+ var myObjectToArray = Object.values(myObject)
+ console.log(myObjectToArray.sort())
+ 
+ //Ex7 
+ //Faceti o functie constructor
+
+ function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+ }
+ // Cu functia constructor creati 3 obiecte cu valori diferite
+
+var myCar = new Car("Audi", "A4", 2015);
+var myCar2 = new Car("BMW", "M3", 2012);
+var myCar3 = new Car("Subaru", "Impreza", 2010);
+console.log(myCar, myCar2, myCar3)
+ // Pentru toate valorile din acele obiecte transformatile in litere mari.
+ console.log(Object.values(myCar).join(" ").toUpperCase())
+ console.log(Object.values(myCar2).join(" ").toUpperCase())
+ console.log(Object.values(myCar3).join(" ").toUpperCase())
