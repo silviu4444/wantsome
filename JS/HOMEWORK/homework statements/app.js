@@ -108,49 +108,7 @@ function books(arr) {
 // console.log(books(arrayBooks))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// PART 2------------------------------------------------------------------------
 
 //Ex1
 //Scrieti o functie care sa protejeze emailul unui user
@@ -304,44 +262,98 @@ function strings(string1, string2) {
   // Implementati o functie care accepta doua argumente: un array si o functie de adevar. Functia returneaza primul element din array care 
   //trece testul specificat
   var arrayThree = ["Suzie", true, false, 10, 20, 30]
-  function isItANumber(arr, isTrue) {
-      var container = [];
+  function isNumber(arr) {
+    var container = [];
     for(var i = 0; i < arr.length; i++) {
         if(typeof(arr[i]) === "number") {
             container += arr[i]+ " "
         }
     }
     var result = container.toString().trim().split(" ")
-    return result;
+    return result[0];
   }
-console.log(isItANumber(arrayThree))
+
+
+  function isItANumber(arr, func) {
+      var checkFunc = func(arr)
+      if(checkFunc) {
+          console.log(checkFunc + " este primul numar din Array-ul inserat.")
+      } else {
+          console.log("Array-ul inserat nu contine un numar!")
+      }
+  }
+// isItANumber(arrayThree, isNumber)
 
 
 
   //Ex11
   // Implementati o functie care accepta ca argumente doua string-uri si verifica daca primul string contine toate literele celui de-al doilea 
   //string
-  
 
+function checkLetters(str1, str2) {
+    var result;
+    var string1Add = [];
+    for(var i = 0; i < str1.length; i++) {
+        string1Add += str1[i]
+    }
+    var result1 = string1Add.trim().replaceAll(" ","").split("");
+    var string2Add = [];
+    for(var j = 0; j < str2.length; j++) {
+        string2Add += str2[j]
+    }
+    var result2 = string2Add.trim().replaceAll(" ","").split("");
+    for(var k = 0; k < result2.length; k++) {
+            if(result1.includes(result2[k])) {
+                result = true;
+            } else {
+                result = false;
+            }
+        }
+        console.log(result)
+};
+// checkLetters("i am c s w", "am i")
 
-  
   // Ex 12
   // Implementati o functie care accepta ca argumente doi parametri: un array si o valoare. Functia afiseaza fiecare element al array-ului pana 
   //cand intalneste elementul cu valoarea specificata
-  
+  function countUntilAt(arr, numb) {
+      var br = arr.indexOf(numb);
+      console.log(br)
+      for(var i = 0; i < br; i++) {
+          console.log(arr[i])
+      }
+  }
+//   countUntilAt([10,20,30,40,50,60,70,80], 70)
 
 
 
 
   // Ex 13
   // Scrieti o functie care elimina toate valorile false dintr-un array: false, null, 0, "", undefined, NaN
-  
+  function deleteFalseExpression(arr) {
+      var result = [];
+      for(var i = 0; i < arr.length; i++) {
+          if(arr[i] !== false) {
+              result += arr[i] + " "
+          }
+      }
+      
+      console.log(result.trim().split(" "));
+  }
+
+//   deleteFalseExpression([false, true, null,false, undefined, 0, 10, 5])
 
 
 
   // Ex 14
   // Scrieti o functie care repeta un string de n ori specificate
   
-  
+  function repeatString(string, times) {
+      for(var i = 1; i <= times; i++) {
+          console.log(string, i)
+      }
+  }
+
+//   repeatString("i am a string", 10)
 
 
