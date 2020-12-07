@@ -40,7 +40,7 @@ function mediaAritmetica(array) {
     for(var i = 0; i < array.length; i++) {
         sum += array[i];
     }
-    return sum;
+    return sum / array.length;
 }
 
 
