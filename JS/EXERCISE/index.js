@@ -18,29 +18,7 @@ const sum = (num = 1) => {
 /*
 2. Implementati o functie care accepta ca parametru un string si returneaza cel mai lung cuvant din acel string.
 */
-const longestString = string => {
-  const str = string.split(" ");
-  let lengths = [];
-  let finalResult = [];
-  
-  for(let i = 0; i < str.length; i++) {
-    lengths.push(str[i].length);
-  };
 
-  const result = lengths.sort(function(a,b) {
-    return b - a;
-  });
-
-  for(let j = 0; j < lengths.length; j++) {
-    if(result[0] === str[j].length) {
-      finalResult.push(str[j]);
-    }
-  }
-
-  return finalResult.join("")
-}
-
-longestString("i am a stringggggg")
 
 
 const longest = stringWithWords => {
@@ -82,15 +60,27 @@ const replaceWords = string => {
   if(typeof string !== "string") {
     return "Error, you provided the wrong argument!"
   }
-  const word = string.split(" ");
+
   let result = [];
-  for(let i = 0; i < word.length; i++) {
-    result.push(word[i].charCodeAt(i) + 1)
+  for(let i = 0; i < string.length; i++) {
+    if(string[i].charCodeAt() === 32) {
+      result.push(32);
+      continue;
+    }
+    if(string[i].charCodeAt() === 90) {
+      result.push(65);
+      continue;
+    }
+    if(string[i].charCodeAt() === 122) {
+      result.push(97);
+      continue;
+    }
+    result.push(string[i].charCodeAt() + 1);
   }
 
+  return String.fromCharCode(...result)
 }
-
-replaceWords("i am a string")
+// console.log(replaceWords("i am a string zz"))
 /*
 5. Implementati o functie convertToTime care accepta ca parametru o valoare numerica si o converteste la numarul de ore si minute corespunzatoare.
 Exemplu: input: 64  ->  output: 1:4
