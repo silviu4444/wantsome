@@ -58,40 +58,104 @@ const reverseString = stringWithWords => {
 */
 const replaceWords = string => {
   if(typeof string !== "string") {
-    return "Error, you provided the wrong argument!"
+    return "Error, you provided the wrong argument!";
   }
 
   let result = [];
   for(let i = 0; i < string.length; i++) {
+
     if(string[i].charCodeAt() === 32) {
       result.push(32);
       continue;
     }
+
     if(string[i].charCodeAt() === 90) {
       result.push(65);
       continue;
     }
+
     if(string[i].charCodeAt() === 122) {
       result.push(97);
       continue;
     }
+
     result.push(string[i].charCodeAt() + 1);
   }
 
-  return String.fromCharCode(...result)
+  return String.fromCharCode(...result);
 }
-// console.log(replaceWords("i am a string zz"))
+// console.log(replaceWords("i am a string Zz"))
 /*
 5. Implementati o functie convertToTime care accepta ca parametru o valoare numerica si o converteste la numarul de ore si minute corespunzatoare.
 Exemplu: input: 64  ->  output: 1:4
 */
+const convertToTime = minutes => {
+  if (typeof minutes !== "number") {
+    return "Error, you provided the wrong argument!"
+  }
 
+  const hours = (minutes - (minutes % 60)) / 60;
+  const rest = minutes % 60;
+  if(rest > 0) {
+    return minutes + " min = " + hours +  "h" + ":" + rest + "min";
+  }
+
+  if(rest === 0) {
+    return minutes + " min = " + hours +  "h";
+  }
+}
+
+// console.log(convertToTime(250))
 /*
 6. Implementati o functie care accepta ca parametru un string si returneaza string-ul cu toate literele ordonate alfabetic
 */
 
+const alphabeticOrder = string => {
+  if(typeof string !== "string") {
+    return "Error, you provided a wrong argument!";
+  }
+
+  let result = [];
+  for(let i = 0; i < string.length; i++) {
+
+    if(string[i].charCodeAt() === 32) {
+      result.push(32);
+      continue;
+    }
+
+    if(string[i].charCodeAt() === 90) {
+      result.push(65);
+      continue;
+    }
+
+    if(string[i].charCodeAt() === 122) {
+      result.push(97);
+      continue;
+    }
+
+    result.push(string[i].charCodeAt());
+  }
+
+  let finalString = result.sort(function(a,b) {
+    return a - b;
+  })
+  return String.fromCharCode(...finalString)
+}
+// console.log(alphabeticOrder("wolfs"))
 /*
 7. Implementati o functie care accepta ca parametru un string si verifica daca inainte si dupa fiecare litera din cadrul sau se afla caracterul '+'
 Exemplu: input: "+a+b+c+"   ->   output: true
 Exemply: input: "+ab+c+d+"  ->   output: false
 */
+
+const containsPlusSign = string => {
+  if(typeof string !== "string") {
+    return "Error, you provided a wrong argument!";
+  }
+
+  for(let i = 0; i < string.length; i ++) {
+    console.log(string[i])
+  }
+}
+
+console.log(containsPlusSign("+s+t+r+i+n+g+"))
