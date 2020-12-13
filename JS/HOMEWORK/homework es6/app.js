@@ -20,9 +20,7 @@ function masina() {
   }
   
   
-  const bmw = masina();
-  bmw.parcurge(100)
-  bmw.afiseaza()
+
   
   // bmw.parcurge(100)
   // bmw.afiseaza()
@@ -45,6 +43,7 @@ function masina() {
       if(num1 !== num2) {
         return num1 + num2;
       }
+      
       return (num1 + num2) * 5;
     }
   
@@ -60,6 +59,7 @@ function masina() {
         if(typeof num1 !== "number" || typeof num2 !== "number") {
             return "Error, your keywords aren't numbers!";
         }
+
         if(num1 === 30 && num2 === 30) {
           return true;
         }
@@ -77,7 +77,26 @@ function masina() {
     //checkString('JSisAwsome') - JSisAwsome
     //checkString('isEasy') - JSisEasy
     //checkString(null) - JS
-    
+
+    const addJsWord = string => {
+      if(typeof string !== "string") {
+        return "Error, you provided the wrong argument!"
+      }
+
+      if(string === "") {
+        return "JS";
+      }
+
+      if(string.indexOf("JS") === 0) {
+        return string;
+      }
+      
+      if(string.indexOf("JS") === -1) {
+        return "JS" + string;
+      }
+    }
+
+    // console.log(addJsWord("isAwesome"))
   
   
   
@@ -86,6 +105,12 @@ function masina() {
     //removeDuplicates('aabcdeef') - 'abcdef'
     //removeDuplicates(122334) - 1234
     
+    const deleteDublicatedWords = string => {
+      console.log(string.split(""))
+    }
+
+    console.log(deleteDublicatedWords("aabcdef"))
+
     //Ex5
     // Gasiti cel mai lung string intr-o fraza
     //findLongestString('Wantsome is Awsomeeee today') - output 'Awsomeeee'
