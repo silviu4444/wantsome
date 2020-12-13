@@ -6,14 +6,19 @@
 1. Implementati o functie care accepta ca parametru o valoare numerica si returneaza suma numerelor de la 1 pana la valoarea specificata
 */
 const sum = (num = 1) => {
-  let result = 0
+  if(typeof num !== "number") {
+    return "Error, you provided the wrong argument!";
+  }
+
+  let result = 0;
   for(let i = 1; i <= num; i++) {
     result += i;
-  };
-  return result;
-};
+  }
 
-// console.log(sum(10))
+  return result;
+}
+
+// console.log(sum(10));
 
 /*
 2. Implementati o functie care accepta ca parametru un string si returneaza cel mai lung cuvant din acel string.
@@ -45,14 +50,14 @@ const longest = stringWithWords => {
 */
 const reverseString = stringWithWords => {
   if(typeof stringWithWords !== "string") {
-    return "Error, you provided the wrong argument!"
+    return "Error, you provided the wrong argument!";
   }
 
   const result= stringWithWords.split("").reverse().join("");
   return result;
 }
 
-// console.log(reverseString("i am a string"))
+// console.log(reverseString("i am a string"));
 /*
 4. Implementati o functie care accepta ca parametru un string si inlocuieste fiecare litera din acesta cu urmatoarea litera din alfabet
 */
@@ -84,14 +89,14 @@ const replaceWords = string => {
 
   return String.fromCharCode(...result);
 }
-// console.log(replaceWords("i am a string Zz"))
+// console.log(replaceWords("i am a string Zz"));
 /*
 5. Implementati o functie convertToTime care accepta ca parametru o valoare numerica si o converteste la numarul de ore si minute corespunzatoare.
 Exemplu: input: 64  ->  output: 1:4
 */
 const convertToTime = minutes => {
   if (typeof minutes !== "number") {
-    return "Error, you provided the wrong argument!"
+    return "Error, you provided the wrong argument!";
   }
 
   const hours = (minutes - (minutes % 60)) / 60;
@@ -105,7 +110,7 @@ const convertToTime = minutes => {
   }
 }
 
-// console.log(convertToTime(250))
+// console.log(convertToTime(130));
 /*
 6. Implementati o functie care accepta ca parametru un string si returneaza string-ul cu toate literele ordonate alfabetic
 */
@@ -133,15 +138,13 @@ const alphabeticOrder = string => {
       continue;
     }
 
-    result.push(string[i].charCodeAt());
+    result.push(string[i].charCodeAt() + 1);
   }
 
-  let finalString = result.sort(function(a,b) {
-    return a - b;
-  })
-  return String.fromCharCode(...finalString)
+
+  return String.fromCharCode(...result)
 }
-// console.log(alphabeticOrder("wolfs"))
+// console.log(alphabeticOrder("i am a string"));
 /*
 7. Implementati o functie care accepta ca parametru un string si verifica daca inainte si dupa fiecare litera din cadrul sau se afla caracterul '+'
 Exemplu: input: "+a+b+c+"   ->   output: true
@@ -153,9 +156,19 @@ const containsPlusSign = string => {
     return "Error, you provided a wrong argument!";
   }
 
-  for(let i = 0; i < string.length; i ++) {
-    console.log(string[i])
+  let checkPlus = [];
+  let joinString = string.split("+").join("");
+  const wordLength = string.split("+").join("").length;
+
+  for(let i = 0; i < string.length; i = i + 2) {
+    checkPlus.push(string[i])
   }
+
+  if((checkPlus.length > joinString.length) && (checkPlus.length === joinString.length + 1) && string[string.length -2] !== "+") {
+    return true;
+  }
+
+  return false;
 }
 
-console.log(containsPlusSign("+s+t+r+i+n+g+"))
+// console.log(containsPlusSign("+a+b+c+"))
