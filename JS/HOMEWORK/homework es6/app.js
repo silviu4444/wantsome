@@ -105,57 +105,169 @@ function masina() {
     //removeDuplicates('aabcdeef') - 'abcdef'
     //removeDuplicates(122334) - 1234
     
-    const deleteDublicatedWords = string => {
-      console.log(string.split(""))
+    const removeDuplicates = string => {
+      let seen = {};
+      let out = [];
+      var j = 0;
+      for(let i = 0; i < string.length; i++) {
+        let item  = string[i];
+        if(seen[item] !== 1) {
+          seen[item] = 1;
+          out[j++] = item;
+        }
+      }
+      return out;
     }
 
-    console.log(deleteDublicatedWords("aabcdef"))
+    // console.log(removeDuplicates("aabcdeeeeeeef"))
 
     //Ex5
     // Gasiti cel mai lung string intr-o fraza
     //findLongestString('Wantsome is Awsomeeee today') - output 'Awsomeeee'
     
+    const longestString = string => {
+      if(typeof string !== "string") {
+        return "Error, you provided the wrong argument!";
+      }
+
+      let result = "";
+      const arrayOfString = string.split(" ");
+      for(let i = 0; i < arrayOfString.length; i++) {
+        const currentWord = arrayOfString[i];
+        if(currentWord.length > result.length) {
+          result = currentWord;
+        }
+      }
+      return result;
+    }
+    // console.log(longestString("Wantsome is Awesomeeee today"))
+
     //Ex6
     //Scrieti o functie care sa aiba output-ul asta
     // *  
     // * *  
     // * * *  
     // * * * *  
-    // * * * * *  
+    // * * * * * 
+    
+    const star = () => {
+      let result = "";
+      for(let i = 0; i < 10; i++) {
+        result = result.concat("*" + " ");
+        console.log(result);
+      }
+
+      return result + "*";
+    }
+    // console.log(star())
     
     //ex7
       const negativeNumbers = [];
     
       function extractNegativeNumbers(numbers) {
-          // append any negative numbers found in the numbers array 
-          // into the negativeNumbers array constant variable above
-       
+          for(let i = 0; i < numbers.length; i++) {
+            if(numbers[i] < 0) {
+              negativeNumbers.push(numbers[i]);
+            }
+          }
+          return negativeNumbers;
       }
-      extractNegativeNumbers([1,2,-5,4,-6])
+
+      // console.log(extractNegativeNumbers([1,2,-5,4,-6]))
     
     //ex8
     //Avem o functie cu 2 numere si un operator, vrem sa obtinem rezultatul in functie de operator - "add", "substract", "multiply", "divide"
     //ex calculate(2, 5, "add") => 7
     //calculate(10, 8, "substract") => 2
     
+      const calculate = (numb1, numb2, operation) => {
+        if(operation === "multiply") {
+          return numb1 * numb2;
+        }
+
+        if(operation === "divide") {
+          return numb1 / numb2;
+        }
+
+        if(operation === "add") {
+          return numb1 + numb2;
+        }
+
+        if(operation === "decrease") {
+          return numb1 - numb2;
+        }
+
+        if(operation === "substract") {
+          return numb1 % numb2;
+        }
+      }
+
+      // console.log(calculate(10, 8, "multiply"))
+
     //Ex9
     // Vreau sa am o functie care sa verifice daca numarul dat este divizibl cu 3, 5 sau ambele si sa printeze "THREE", "FIVE", "BOTH" iar daca nu este cu niciunul sa returneze numarul
     // isDiv(15) => "BOTH"
     // isDiv(9)=> "THREE"
     // isDiv(7)=> 7
+
+    const isDivisible = number => {
+      if((number % 3) === 0 && (number % 5) === 0) {
+        return "BOTH";
+      }
+
+      if((number % 3) === 0) {
+        return "THREE";
+      }
+
+      if((number % 5) === 0) {
+        return "FIVE";
+      }
+
+      if((number % 3) !== 0 || (number % 5 !== 0)) {
+        return number;
+      }
+    }
     
+    // console.log(isDivisible(15))
     
     //Master exercises
     //Ex9 
     // Vreau sa pot afisa data si ziua sub urmatorul format:
     // Azi este : Luni. 
     // Ora este : 20 PM : 30 : 38
-    
+  
+    const getDateAndTime = () => {
+      let day = new Date()
+      console.log(day.toDateString())
+    }
+    // getDateAndTime()
+
+
     //ex10
     // ATM-urile iti dau voie sa folosesti pin-uri din 4 sau 6 cifre. Faceti o functie care sa returneze true daca pin-ul e corect si false daca e gresit
     // validPin("1234") => true
     // validPin("12345") => false
     // validPin("z23f") => false
+
+    const validPin = pin => {
+      if((pin.length > 6) || (pin.length < 4)) {
+        return "Error! Your pin should be at least 4 characters and max. 6 characters.";
+      }
+
+      let checkObject = {};
+      for(let i = 0; i < pin.length; i++) {
+        checkObject[pin[i]] = parseInt(pin[i]);
+      }
+
+      for(let j = 0; j <= pin.length; j++) {
+        if(typeof checkObject[pin[j]] === NaN) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+    console.log(validPin("a1237"))
     
     //ex11 
     //Folosind regex vreau sa scot toate vocalele dintr-un string
