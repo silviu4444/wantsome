@@ -288,7 +288,16 @@ function masina() {
     // isSquareNumber(25) => true
     // isSquareNumber(3) => false
     
-    
+    const isSquareNumber = number => {
+      for(let i = 1; i <= number; i++ ) {
+        if(i * i === number) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    console.log(isSquareNumber(64))
     //ex13
     // Vreau sa am o functie care sa verifice daca un cuvant este o anagrama- daca toate literele din primul string se regasesc in al doilea
     // isAnagram("School master", "The class room") => true
