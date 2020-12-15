@@ -254,25 +254,34 @@ function masina() {
         return "Error! Your pin should be at least 4 characters and max. 6 characters.";
       }
 
-      let checkObject = {};
-      for(let i = 0; i < pin.length; i++) {
-        checkObject[pin[i]] = parseInt(pin[i]);
-      }
-
-      for(let j = 0; j <= pin.length; j++) {
-        if(typeof checkObject[pin[j]] === NaN) {
+      let pinToArray = pin.split("")
+      let checkPin = pinToArray.map(function(i) {
+        return parseInt(i, 10);
+      });
+      for(let i = 0; i < checkPin.length; i++) {
+        if(isNaN(checkPin[i])) {
           return false;
         }
       }
-
       return true;
     }
-    console.log(validPin("a1237"))
+    // console.log(validPin("123456"))
+
+
+
+
+
     
     //ex11 
     //Folosind regex vreau sa scot toate vocalele dintr-un string
     // removeVowels("Hey I am developer") => "Hy m dvlpr"
     
+    const removeVowels = string => {
+      let reg = new RegExp(string);
+      console.log()
+    }
+    console.log(removeVowels("i am a string"))
+
     //ex12
     //Vreau sa am o functie care sa verifice daca un numar este patrat
     // isSquareNumber(-1) => false
