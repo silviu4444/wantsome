@@ -277,10 +277,9 @@ function masina() {
     // removeVowels("Hey I am developer") => "Hy m dvlpr"
     
     const removeVowels = string => {
-      let reg = new RegExp(string);
-      console.log()
+      console.log(string.replace(/[aeiou]/gi, ""))
     }
-    console.log(removeVowels("i am a string"))
+    // console.log(removeVowels("Hey, i am a string"))
 
     //ex12
     //Vreau sa am o functie care sa verifice daca un numar este patrat
@@ -297,7 +296,7 @@ function masina() {
       return false;
     }
 
-    console.log(isSquareNumber(64))
+    // console.log(isSquareNumber(64))
     //ex13
     // Vreau sa am o functie care sa verifice daca un cuvant este o anagrama- daca toate literele din primul string se regasesc in al doilea
     // isAnagram("School master", "The class room") => true
