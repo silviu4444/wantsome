@@ -17,6 +17,6 @@ document.body.appendChild(ul);
 for(let i = 0; i < books.length; i++) {
   
 }
-//BONUS: folositi ul si li pentru a face display la carti
+//BONUS: folositaaai ul si li pentru a face display la carti
 //BONUS: adaugati o proprietate pentru fiecare carte cu URL de la coverul cartii si adaugati un element img pentru fiecare (nu uitati sa adaugati img-ul si pe obiectul cartii - acolo va fi si poza)
 //BONUS: schimbati style-ul pentru fiecare carte in functie daca a fost citita sau nu.
