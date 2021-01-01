@@ -1,0 +1,28 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1 {
+    margin-right: auto;
+    margin-left: auto;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    list-style-type: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.resize {
+    width: 350px;
+}
+.isRead {
+    background: rgba(0, 0, 255, 0.384);
+}
+.isNotRead {
+    background: rgba(255, 0, 0, 0.39);
+}

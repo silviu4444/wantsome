@@ -1,0 +1,65 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1 {
+    margin-right: auto;
+    margin-left: auto;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    list-style-type: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.resize {
+    width: 350px;
+}
+
+@keyframes pulseFalse {
+    25% {
+        border: 3px solid red;
+    }
+
+    75% {
+        border: 3px solid rgba(255, 0, 0, 0.356);
+    }
+
+    100% {
+        border: 3px solid red;
+    }
+}
+@keyframes pulseTrue {
+    25% {
+        border: 3px solid blue;
+    }
+
+    75% {
+        border: 3px solid rgba(0, 0, 255, 0.356);
+    }
+
+    100% {
+        border: 3px solid blue;
+    }
+}
+.isRead {
+    border: 3px solid blue;
+    border-radius: 4px;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: pulseTrue;
+}
+.isNotRead {
+    border: 3px solid red;
+    border-radius: 4px;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: pulseFalse;
+}
