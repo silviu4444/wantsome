@@ -29,11 +29,11 @@ li {
     }
 
     75% {
-        border: 3px solid rgba(255, 0, 0, 0.356);
+        border: 3px solid rgba(255, 0, 0, 0.592);
     }
 
     100% {
-        border: 3px solid red;
+        background: rgba(255, 0, 0, 0.219);
     }
 }
 @keyframes pulseTrue {
@@ -42,22 +42,22 @@ li {
     }
 
     75% {
-        border: 3px solid rgba(0, 0, 255, 0.356);
+        border: 3px solid rgba(0, 0, 255, 0.564);
     }
 
     100% {
-        border: 3px solid blue;
+        background: rgba(0, 0, 255, 0.24);
     }
 }
 .isRead {
-    border: 3px solid blue;
+    border:3px solid blue;
     border-radius: 4px;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-name: pulseTrue;
 }
 .isNotRead {
-    border: 3px solid red;
+    border:3px solid red;
     border-radius: 4px;
     animation-duration: 3s;
     animation-iteration-count: infinite;

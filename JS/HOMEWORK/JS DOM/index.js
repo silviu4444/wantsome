@@ -24,7 +24,8 @@ books.forEach(element => {
   let li = document.createElement('li');
   li.innerHTML = element.title;
   li.style.marginBottom = '15px';
-  li.style.fontSize = "30px"
+  li.style.fontSize = '30px';
+  li.style.padding = '0 10px';
   ul.appendChild(li);
   let img = document.createElement('img');
   img.style.marginBottom = '15px';
