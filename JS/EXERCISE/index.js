@@ -1,19 +1,49 @@
-// Only change code below this line
+const arrayOne = ["john", "JACOB", "jinGleHeimer", "schmidt"];
 
-// Only change code above this line
-class Thermostat {
-  constructor(Fahrenheit) {
-      this._Fahrenheit = Fahrenheit;
-  }
-  get temperature() {
-      return (5 / 9) * (this._Fahrenheit - 32);
-  }
-  set temperature(celsius) {
-      this.fahrenheit = (celsius * 9.0) / 5 + 32;
-  }
+function capitalizeNames(arr){
+    arr.filter( (el) => {
+        console.log(el[0].toUpperCase() + el.toLowerCase().slice(1));
+    })
+   }
+//    console.log(capitalizeNames(arrayOne));
+   
+
+const number = [2, '5', 100, '100', 'blalblala'];
+const checkNumber = (number) => {
+    if(typeof number === 'number') {
+        return number * 2;
+    }
 }
+function doubleEachNumber(arr){
+    const result =  arr.map( el => {
+        if(typeof el === 'number') {
+            return el * 2;
+        }
 
-const thermos = new Thermostat(76); // Setting in Fahrenheit scale
-let temp = thermos.temperature; // 24.44 in Celsius
-thermos.temperature = 26;
-temp = thermos.temperature; // 26 in Celsius
+        return el;
+    })
+
+    return result;
+}
+console.log(doubleEachNumber(number)); // [4, “5”, 200, “100”, “blalblala”]
+const arr = [
+    {
+    name: "Angelina",
+    surname: 'Jolie',
+    age: 80
+    },
+    {
+    name: "Eric",
+    surname: 'Jones',
+    age: 27
+    },
+   ]
+function getPersonsNames(names){
+    const result = names.map( el => {
+        return `${el.name} ${el.surname}`;
+    })
+    
+    return result;
+   }
+   console.log(getPersonsNames(arr));
+   

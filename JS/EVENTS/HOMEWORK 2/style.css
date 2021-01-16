@@ -1,0 +1,52 @@
+main {
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 20px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    display: grid;
+}
+div:nth-of-type(1) {
+    margin-top: 15px;
+}
+label {
+    text-transform: uppercase;
+    color: gray;
+    margin-top: 15px;
+}
+.checkMessage {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(209, 61, 61);
+    background-color: rgb(243, 210, 210);
+    color: black;
+    padding: 12px 10px;
+}
+input {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    border-style: solid;
+}
+input:focus {
+    outline: none;
+    border: 1px solid rgb(59, 58, 58);
+}
+p {
+    color: gray;
+    margin: 0;
+}
+button {
+    background-color: rgb(46, 45, 45);
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    margin: 10px 0;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
