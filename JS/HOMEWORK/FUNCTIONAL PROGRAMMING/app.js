@@ -144,7 +144,7 @@ const ids2 = () => {
     return result;
 }
 
-console.log(ids2())
+// console.log(ids2())
 
 
 //ex.1.
