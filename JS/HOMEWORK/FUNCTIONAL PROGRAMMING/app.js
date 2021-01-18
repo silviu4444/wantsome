@@ -120,7 +120,6 @@ let movieLists2 = [
         ]
     }
 ];
-// console.log(movieLists2)
 
 const ids2 = () => {
     let result = [];
@@ -145,7 +144,7 @@ const ids2 = () => {
     return result;
 }
 
-// console.log(ids2())
+console.log(ids2())
 
 
 //ex.1.
@@ -235,15 +234,19 @@ let totalOfAllAges = arr.map(element => {
 
 // console.log(totalOfAllAges)
 
-let averageAgeOfCats = arr.filter(element => {
-    if (element.species === 'cat') {
-        return element;
-    }
-}).map(element => {
-    return element.age;
-}).reduce((accumulator, currentValue) => {
-    return (accumulator + currentValue)
-}, 0) /
+let averageAgeOfCats = () => {
+    const totalAge =
+    arr.filter(element => {
+        if (element.species === 'cat') {
+            return element;
+        }
+    }).map(element => {
+        return element.age;
+    }).reduce((accumulator, currentValue) => {
+        return (accumulator + currentValue)
+    }, 0);
+
+    const ageLength =
     arr.filter(element => {
         if (element.species === 'cat') {
             return element;
@@ -252,18 +255,24 @@ let averageAgeOfCats = arr.filter(element => {
         return element.age;
     }).length;
 
-// console.log(averageAgeOfCats)
+    return totalAge / ageLength;
+}
+
+// console.log(averageAgeOfCats())
 
 
-let averageAgeOfHumans = arr.filter(element => {
-    if (element.species === 'human') {
-        return element;
-    }
-}).map(element => {
-    return element.age;
-}).reduce((accumulator, currentValue) => {
-    return (accumulator + currentValue)
-}, 0) /
+let averageAgeOfHumans = () => {
+    const totalAge = 
+    arr.filter(element => {
+        if (element.species === 'human') {
+            return element;
+        }
+    }).map(element => {
+        return element.age;
+    }).reduce((accumulator, currentValue) => {
+        return (accumulator + currentValue)
+    }, 0);
+    const ageLength = 
     arr.filter(element => {
         if (element.species === 'human') {
             return element;
@@ -272,16 +281,25 @@ let averageAgeOfHumans = arr.filter(element => {
         return element.age;
     }).length;
 
-// console.log(averageAgeOfHumans)
+    return totalAge / ageLength;
+}
 
-let avgLengthOfNames = arr.map(element => {
-    return element.name;
-}).join("").length /
+// console.log(averageAgeOfHumans())
+
+let avgLengthOfNames = () => {
+    const totalLength =
     arr.map(element => {
         return element.name;
-    }).length
+    }).join("").length;
+    const length =
+        arr.map(element => {
+            return element.name;
+        }).length;
 
-// console.log(avgLengthOfNames)
+    return totalLength / length;    
+}
+
+// console.log(avgLengthOfNames())
 
 //ex 1.
 // Faceti o functie numita composedValue care ia ca argumente 2 functii si returneaza valoarea lor - // f1(f2(value))
