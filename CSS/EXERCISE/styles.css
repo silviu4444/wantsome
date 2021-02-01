@@ -1,0 +1,9 @@
+.parent-div {
+    position: relative;
+
+}
+
+#divPosEight {
+    position: absolute;
+    top: 0;
+}

@@ -340,11 +340,12 @@ const anAnimal = new Animal("Dog", 10);
 //3.1 Clasa Table sa aiba o metoda addTransaction unde sa putem adauga tranzactiile pe care o sa le creem mai tarziu
 
 
+
 // const bankAccount = ...;
 // const transaction1 = ...;
 // const transaction2 = ...;
 // const table = ...;
-// table.addTransaction(...)
+// table.addTransaction(...) 
 // console.log(table)
 
 
@@ -373,19 +374,28 @@ class Transaction {
   }
 
   get finalSum() {
-    amount -= 10;
+    return this.amount -= 10;
+  }
+
+  get accountName() {
+    return 
   }
 }
 
 class Table {
-  array;
-  constructor(array) {
-    this.array = array;
+  constructor() {
+    this.array = [];
   }
 
-  addTransaction() {
-    let result = [];
-    result.push(this.array);
-    return result;
+  addTransaction(transaction) {
+    this.array.push(transaction);
   }
 }
+
+const bankAccount = new Account("Iasi", "Ionut");
+const transaction1 = new Transaction(bankAccount, "BT", 250, "Trimis de la Ionut pentru Razvan.");
+const transaction2 = new Transaction(bankAccount, "CEC", 1000, "Trimis de la Ionut pentru Andreea.");
+const table = new Table();
+table.addTransaction(transaction1);
+table.addTransaction(transaction2);
+console.log(table);
