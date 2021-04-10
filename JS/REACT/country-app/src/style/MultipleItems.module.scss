@@ -1,0 +1,45 @@
+@import './variables.scss';
+.dFlex {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    // background-color: $darkModeElements;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 20px;
+    // height: 240px;
+    .itemsData {
+        img {
+            width: 250px;
+            height: 170px;
+            border-radius: 2px;
+            position: relative;
+            z-index: 10;
+        }
+        .infoData {
+            padding: 10px;
+            width: 250px;
+            background-color: $darkModeElements;
+            height: 200px;
+            position: relative;
+            top: -40px;
+            h1 {
+                color: white;
+                font-size: 20px;
+                margin-top: 35px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 15px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.dFlex:hover {
+    position: relative;
+    bottom: 20px;
+    transition: position 1s;
+    cursor: pointer;
+}

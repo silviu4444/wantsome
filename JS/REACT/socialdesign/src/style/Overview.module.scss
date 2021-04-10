@@ -1,0 +1,46 @@
+@import './variables.scss';
+.flexC {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px 15px;
+    width: 190px;
+    flex-wrap: warp;
+    background-color: $boxColor;
+    border-radius: 5px;
+    p {
+        margin-top: 0;
+        color: $username;
+    }
+
+    h1 {
+        margin: 0;
+        color: white;
+    }
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    .fix {
+        height: 20px;
+        position: relative;
+        top: 3px;
+    }
+    .icon {
+        position: relative;
+        top: 13px;
+        img {
+            position: relative;
+            bottom: 2px;
+            right: 2px;
+        }
+    }
+    .upRank {
+        color: $upRank;
+        font-size: 13px;
+    }
+    .downRank {
+        color: $downRank;
+        font-size: 13px;
+    }
+}

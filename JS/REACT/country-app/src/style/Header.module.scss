@@ -1,0 +1,7 @@
+@import './variables.scss';
+.displayFlex {
+    padding: 0 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,67 @@
+@import "./variables.scss";
+
+@media(min-width: 700px) {
+  .found {
+    width: 100%;
+  }
+  .dFlex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0 60px;
+  }
+  .dFlexItems {
+    display: flex;
+    flex-direction: row;
+    padding: 0 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .mainSection {
+    // background: $darkModeBackground;
+    padding: 30px 100px;
+    min-height: 100vh;
+    input {
+      background: $darkModeElements;
+      border: none;
+      padding: 10px 120px 10px 20px;
+      border-radius: 5px;
+      color: white;
+    }
+    input:focus {
+      border-radius: 5px;
+      // border: 2px solid $lightModeText;
+      outline: none;
+    }
+    input::placeholder {
+      color: white;
+      font-size: 15px;
+    }
+    button {
+      color: hsl(0, 0%, 100%);
+      border: hsl(209, 23%, 22%);
+      background-color: hsl(209, 23%, 22%);
+      margin-left: 20px;
+      span {
+        margin-left: 3px;
+      }
+      .arrowIcon {
+        margin-right: 3px;
+      }
+    }
+    button:hover {
+      color: hsl(0, 0%, 100%);
+      border: 1px solid hsl(209, 23%, 22%);
+      background-color: hsl(200, 15%, 8%);
+    }
+    .ant-select-selector {
+      background-color: black !important;
+    }
+  }
+  .loader {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+  }
+}

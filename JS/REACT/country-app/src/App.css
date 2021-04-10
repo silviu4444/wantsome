@@ -1,0 +1,8 @@
+.ant-selector {
+    border: none !important;
+}
+.ant-select-selector {
+    background-color: hsl(209, 23%, 22%) !important;
+    border: none !important;
+    color: white;
+}
